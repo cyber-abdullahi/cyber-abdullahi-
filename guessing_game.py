@@ -1,5 +1,4 @@
-# This app think of a random colour and prompt the user to get what the colour is.check to see if The user guess matches the color it thinks about as well as counts the number of guess
-
+# This app think of a random colour and prompt the user to get what the colour is.check to see if the user guess matches the color it thinks about as well as counts the number of guess
 
 import random as r
 
