@@ -2,7 +2,7 @@
 
 #Initiate computer's choice
 import random
-# choice_list = ["Rock","Paper","Scissor"]
+# choice_list = ["Rock","Paper","Scissors"]
 # app_choice = random.choice(choice_list) #app choose from the list...
 
 #Initiate user's choice
@@ -14,15 +14,16 @@ while True:
       continue
     else:
        print( "Welcome to the game. lets play!")
-    
+    user_win =0
+    app_win = 0
     for round in range(rounds):
-        choice_list = ["Rock","Paper or Scissor"]
+        choice_list = ["Rock","Paper","Scissors"]
         app_choice = random.choice(choice_list) #app choose from the list...
-        user_choice = input( "Rock Paper or Scissor:").capitalize()
+        user_choice = input( "Rock Paper or Scissors:").capitalize()
 
     #Enter validation
-        while user_choice not in ["Rock","Paper","Scissor: "]:
-            user_choice=input("invalid Entry.Type Rock,Paper or Scissor: ").capitalize()
+        while user_choice not in ["Rock","Paper","Scissors: "]:
+            user_choice=input("invalid Entry.Type Rock,Paper or Scissors: ").capitalize()
         #Match the entries and determine a winner
         if user_choice == app_choice:
             print(f"It is a draw! We both chose {app_choice}") 
@@ -31,9 +32,19 @@ while True:
             user_choice == "paper" and app_choice == "Rock" or
             user_choice == "Scissors" and app_choice == "Paper"
             ):
-            print(f"You won. You chose {user_choice} and I chose{app_choice}")
+            print(f"You won. You chose {user_choice} and I chose{app_choice}.")
+            user_win+=1
     else:
         print(f"I won.I choice {app_choice} and you chose {user_choice}. ")
+        app_win+=1
+
+        print(f"\nFinal score- you:{user_win}\nApp: {app_win}")
+        if user_win > app_win:
+            print("YOU WON HA HA HA!")
+        elif user_win == app_win:
+            print("IT'S A DRAW")
+        else:
+            print('I WON HA HA HA!')
     play_again = input(f"You have played {rounds} games.Would you like to play again? (yes or no): ")
     if play_again == 'yes'.lower():
         continue
